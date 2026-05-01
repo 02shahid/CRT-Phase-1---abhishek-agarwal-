@@ -56,12 +56,15 @@ using namespace std;
 int main() {
     int a, b;
     int max_Number;
-    
-    cin>> a >> b;
+    cout<< "enter no. a:";
+    cin>> a ;
+    cout<< "enter no. b:";
+    cin>> b ;
     //ternary operator
     max_Number = (a>b) ? a : b;
     
-    cout<< max_Number;
+    
+    cout<<"maximum no. is:" << max_Number;
     return 0;
     
 }
