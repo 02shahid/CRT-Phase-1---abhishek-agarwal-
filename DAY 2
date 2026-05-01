@@ -16,3 +16,32 @@ int main() {
     }
     return 0;
 }
+
+
+
+//problem 3 --  nested if else cond.
+// if else cond.
+// to verify user age whether eligible or not 
+
+#include <iostream>
+using namespace std;
+
+int main() { 
+    int age; 
+    cin >> age;
+    
+    if(age>= 18) {
+        if (age>=100) {
+            cout<< " eligible to vote but we are super senior citizens";
+        } else {
+            cout << "eligible to vote";
+        }
+    } else {
+        if (age<0) {
+            cout<< " enter a valid age number ";
+        } else {
+            cout<< " not eligible to vote";
+        }
+    }
+    return 0;
+}
