@@ -94,7 +94,7 @@ int main() {
 
 
 // problem 6 - break statement
-// 
+// we have to get a number till we get a negative no.
 #include <iostream>
 using namespace std;
 
