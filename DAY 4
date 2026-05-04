@@ -86,3 +86,52 @@ cin >> n;
     }
     return 0;
 }
+
+
+
+// problem 5 - print A rectangle
+
+#include <iostream>
+using namespace std;
+int main(){
+int row, col;
+cin >> row;
+cin >> col;
+
+    //number of times to print the pattern
+    for(int i=1; i<=row; i++){
+        
+        for(int j = 1 ; j<=col; j++) {
+            cout<< "*";
+        }
+        
+        cout<< "\n";
+    }
+    return 0;
+}
+
+
+
+// problem 6 - print A hollow square
+
+#include <iostream>
+using namespace std;
+int main(){
+int n;
+cin >> n;
+    //number of times to print the pattern
+    for(int i=1; i<=n; i++){
+        
+        for(int j = 1 ; j<=n; j++) {
+             cout<<" ";
+            if (i == 1||j == 1||i == n||j == n){
+            cout<<"*";
+        } else {
+            cout<<" ";
+        }
+        }
+        
+        cout<< "\n";
+    }
+    return 0;
+}
