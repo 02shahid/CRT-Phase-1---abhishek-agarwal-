@@ -135,3 +135,32 @@ cin >> n;
     }
     return 0;
 }
+
+
+
+// problem 7- print a traingle
+
+#include <iostream>
+using namespace std;
+int main(){
+int n;
+cout << "ENTER THE NO. OF ROWS:";
+cin >> n;
+
+    //number of times to print the pattern
+    for(int i=1; i<=n; i++){
+        
+        // no. of spaces logic
+        
+        for(int k = n-i ; k>=1; k--) {
+            cout<< " ";
+        }
+        //this defines what to print in the pattern
+        for(int j=1; j<=i; j++){
+            cout<< "* ";
+        }
+        cout<< "\n";
+    }
+    return 0;
+}
+
