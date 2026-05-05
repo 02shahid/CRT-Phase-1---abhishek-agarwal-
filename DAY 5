@@ -1,0 +1,25 @@
+// Problem 1- printing upper right angle triangle and itd opposite 
+
+#include <iostream>
+using namespace std;
+int main(){
+
+    //print upper right angled triangle
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=ni; j++){
+            cout<< "*";
+        }
+        cout<< "\n";
+    }
+    
+     // print lower traingle 
+      for(int k=n-1; k>=1;k--){
+          for(int l=1; l<=k; l++){
+              cout<<"*";
+          }
+          cout<<"\n";
+      }
+    return 0;
+}
+
+
