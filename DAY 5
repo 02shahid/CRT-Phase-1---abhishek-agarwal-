@@ -150,3 +150,47 @@ int main(){
     
     return 0;
 }
+
+
+
+//Problem 9 - Pointers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int age = 24;
+    int *ptr = &age;
+    
+    cout << age << "\n";
+    cout << ptr << "\n";
+    cout << *ptr << "\n";
+
+    // // derefrenciong of a pointer
+    // cout << *ptr;
+    
+    // age = 28
+    *ptr = 28;
+    cout << *ptr;
+    
+} 
+
+
+
+//Problem 10 - Pointers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+   int a,b;
+   cin >> a;
+   cin >> b;
+   
+   int *ptr1 = &a;
+   int *ptr2 = &b;
+   
+   int sum = *ptr1 + *ptr2;
+   cout << "SUM: " <<sum;
+   return 0;
+}
