@@ -24,5 +24,99 @@ int main(){
 
 
 
+// Problem 2- Function declaration and initialization
 
+#include <iostream>
+using namespace std;
+
+void printMessage(){
+    cout<<"Hi we are learning functions...";
+}
+int main(){
+    printMessage();
+    return 0;
+}
+
+
+
+// Problem 3- Making a Function with argument and return type
+
+#include <iostream>
+using namespace std;
+
+int area(int a, int b){
+    return a*b;
+}
+int main(){
+    int length =10;
+    int width = 5;
+    int areaOfRectangle= area(length, width);
+    
+    cout<<areaOfRectangle;
+    
+    return 0;
+}
+
+
+
+// Problem 4 - no argument no return type 
+
+#include <iostream>
+using namespace std;
+
+void DoorBell(){
+    cout<<"Ting TOng....";
+    
+}
+
+int main(){
+    DoorBell();
+    return 0;
+}
+
+
+
+// Problem 5 - argument but no return type 
+
+#include <iostream>
+using namespace std;
+
+void sendText(string message){
+    cout<<message;
+}
+int main(){
+    sendText("RCB wins....");
+    return 0;
+}
+
+
+
+// Problem 6 - no argument but return type 
+
+#include <iostream>
+using namespace std;
+
+int ticketNumber(){
+    return 102;
+}
+int main(){
+    cout<<ticketNumber();
+    return 0;
+}
+
+
+
+// Problem 7-  argument with return type 
+
+#include <iostream>
+using namespace std;
+
+int currencyConversion(int amountINRUSD){
+    return amountINRUSD / 100;
+}
+
+int main(){
+    cout<<currencyConversion(2000);
+    return 0;
+}
 
