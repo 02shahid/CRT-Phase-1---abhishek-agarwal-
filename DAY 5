@@ -120,3 +120,33 @@ int main(){
     return 0;
 }
 
+
+
+//Problem 8 - Function Overloading
+
+#include <iostream>
+using namespace std;
+
+int addNumbers(int a, int b){
+    return a+b;
+}
+
+int addNumbers(int a, int b, int c){
+    return a+b+c;
+}
+int addNumbers(int a, int b, int c, int d){
+    return a+b+c+d;
+}
+
+double addNumbers(double a, double b){
+    return a+b;
+}
+
+int main(){
+    cout << addNumbers(5,2)<<" \n";
+    cout << addNumbers(5,2,3)<<" \n";
+    cout << addNumbers(5,2,3,4)<<" \n";
+    cout << addNumbers(5.5,2.0);
+    
+    return 0;
+}
