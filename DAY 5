@@ -5,15 +5,15 @@ using namespace std;
 int main(){
 
     //print upper right angled triangle
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=ni; j++){
+    for(int i=1; i<=5; i++){
+        for(int j=1; j<=i; j++){
             cout<< "*";
         }
         cout<< "\n";
     }
     
      // print lower traingle 
-      for(int k=n-1; k>=1;k--){
+      for(int k=5-1; k>=1;k--){
           for(int l=1; l<=k; l++){
               cout<<"*";
           }
@@ -21,5 +21,8 @@ int main(){
       }
     return 0;
 }
+
+
+
 
 
