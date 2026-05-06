@@ -88,7 +88,7 @@ int main() {
 
 
 // Classes & Objects ---
-// problem---
+// problem 1 ---
 
 #include <iostream>
 using namespace std;
@@ -111,5 +111,25 @@ int main(){
     s2.age = 20;
     s1.introduce();
     s2.introduce();
+}
+
+
+// problem 2--- Access modifier 
+// public 2.1
+
+#include <iostream>
+using namespace std;
+
+class publicpark {
+    public:
+    void enter(){
+        cout << "Anyone can eneter in the park....";
+    }
+};
+
+int main(){
+    publicpark p;
+    p.enter();
+
 }
      
