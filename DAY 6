@@ -21,4 +21,67 @@ using namespace std;
      cout << a << " " << b;
      
  }
+
+
+// Problem 2 -- Default arguments
+
+#include <iostream>
+using namespace std;
+
+int area(int a, int b = 5){
+    return a*b;
+    
+}
+int main(){
+    cout<<area(10);
+    //cout<<area(10,3);
+}
+
+
+
+// Problem 3 -- call by value || call by reference 
+// call by value - photocopy
+// call by reference - original copy (address)
+
+#include <iostream>
+using namespace std;
+
+void updatebyValue(int a){
+    a = 500;
+}
+
+void updatebyrefrence(int &a){
+    a = 500;
+}
+int main(){
+    
+    int original = 100;
+    cout << original << "\n";
+    
+    updatebyValue(original);
+    cout << original << "\n";
+    updatebyrefrence(original);
+    cout << original;
+    
+}
+
+
+
+// Practice problem -- 4
+
+#include <iostream>
+using namespace std;
+
+int coffee(int a, int b=100) {
+    return a*b;
+}
+
+int main() {
+    int a;
+    cout << "no. of coffe: ";
+    cin >> a;
+    cout << " coffee bill: " << coffee(a);
+    
+    return 0;
+}
      
