@@ -45,3 +45,60 @@ int main() {
       child code1;
       code1.accessSecretCode();
   }
+
+
+
+// example 1 -- public
+
+#include <iostream>
+using namespace std;
+
+class car {
+    public:
+    string name;
+    
+    void carName(){
+        cout << "Car name is " << name;
+    }
+    };
+    
+    int main(){
+        car brand1;
+        brand1.name = "BMW";
+        brand1.carName();
+    }
+
+
+
+// CONSTRUCTORS ---
+// types :- 1.1- default 
+         // 1.2 - parametrized
+
+
+// Problem 1.1--
+
+#include <iostream>
+using namespace std;
+
+class wifiConnect {
+    public:
+    string networkName;
+    string password;
+    
+    //CONSTRUCTOR
+    wifiConnect() {
+        networkName = "AHH FIBRE";
+        password = "BJP Wins";
+    }
+    
+    
+    public:
+    void showDetails() {
+        cout << "network name is" << networkName << " and its password is " << password;
+    }
+  };
+  
+  int main(){
+      wifiConnect obj1;
+      obj1.showDetails();
+  }
