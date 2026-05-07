@@ -1,4 +1,5 @@
-// problem 1---
+// problem 2.2--- Access specifier
+// private--
 
 #include <iostream>
 using namespace std;
@@ -19,3 +20,28 @@ int main() {
     BandAccount myaccount;
     myaccount.showBalance();
 }    
+
+
+  // Access specifier 
+  //Problem 2.3 -- protected 
+  
+  #include <iostream>
+  using namespace std;
+  
+  class Parent {
+      protected:
+      int secretCode = 1234;
+  };
+  
+  class child : public Parent{
+      public:
+      void accessSecretCode(){
+          cout << "secret code of the lock is " << secretCode;
+          
+      }
+  };
+  
+  int main(){
+      child code1;
+      code1.accessSecretCode();
+  }
