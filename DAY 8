@@ -1,1 +1,185 @@
+// -- INHERITANCE
 
+TYPES- 1. Single
+       2. Multi-level
+       3. MUltiple
+       4. Heirarichal
+       5. Hybrid
+
+
+//Problem 1 - Single Inheritance
+
+#include <iostream>
+using namespace std;
+
+class vehicle {
+    public:
+    void start(){
+        cout << "vehicle starts...." << "\n";
+    }
+};
+    
+    class car : public vehicle {
+        public:
+        void drive(){
+            cout << "car is running" << "\n";
+        
+        }
+    };
+    
+int main()
+{
+    car obj1;
+    obj1.start();
+    obj1.drive();
+
+    return 0;
+}
+
+
+
+// Problem 2 - Multilevel inhe.
+
+#include <iostream>
+using namespace std;
+
+class vehicle {
+    public:
+    void start(){
+        cout << "Vehicle starts...." << "\n";
+    }
+};
+    
+    class car : public vehicle {
+        public:
+        void drive(){
+            cout << "Car is running" << "\n";
+        
+        }
+    };
+    
+    class speedometer : public car {
+        public:
+        void speed(){
+            cout << "Car is running at 60km/h" << "\n";
+        }
+    };
+    
+int main()
+{
+    speedometer obj1;;
+    obj1.start();
+    obj1.drive();
+    obj1.speed();
+
+    return 0;
+}
+
+
+
+// Problem 3 - Heirarichal inhe.
+
+#include <iostream>
+using namespace std;
+
+class vehicle {
+    public:
+    void start(){
+        cout << "Vehicle starts...." << "\n";
+    }
+};
+    
+    class car : public vehicle {
+        public:
+        void drive(){
+            cout << "Car is running" << "\n";
+        
+        }
+    };
+    
+    class bike : public vehicle {
+        public:
+        void run(){
+            cout << "Bike is running" << "\n";
+        
+        }
+    };
+    
+    
+int main()
+{
+    car obj1;
+    bike obj2;
+    
+    obj1.start();
+    obj1.drive();
+    
+    obj2.start();
+    obj2.run();
+    
+
+    return 0;
+}
+
+
+
+// Problem 4 - Multiple inhe.
+
+#include <iostream>
+using namespace std;
+
+class Parent1 {
+    public:
+    void giveMeMoney(){
+        cout << "Mummy paisa do..." <<"\n";
+    }
+};
+
+class Parent2 {
+    public:
+    void giveMeMoney(){
+        cout << "Papa paisa do..." <<"\n";
+    }
+};
+
+class child : public Parent1, public Parent2{
+    // NO LOGIC
+};
+
+int main(){
+    child obj1;
+    //obj1.giveMeMoney();
+    obj1.Parent1::giveMeMoney();
+    obj1.Parent2::giveMeMoney();
+}
+
+
+
+// Problem 5 - Hybrid inhe.
+
+#include <iostream>
+using namespace std;
+
+class A {
+    public:
+    void print(){
+        cout << "BJP WON" <<"\n";
+    }
+};
+
+class B : virtual public A {
+    // NO LOGIC
+};
+
+class C : virtual public A {
+    // NO LOGIC
+};
+
+class D : public B, public C {
+    // NO LOGIC
+};
+
+int main(){
+    D obj1;
+    obj1.print();
+}
