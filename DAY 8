@@ -183,3 +183,130 @@ int main(){
     D obj1;
     obj1.print();
 }
+
+
+// POLYMORPHISM
+
+: Polymorphism means one name but many forms
+: Same function behaves differently depending on the type    of the object it called
+ 
+: two types
+
+-: compile time polymorphism -- function overloading -- static
+: resolved at compile time
+: Function overloads -- same function name, but different parameters
+: Faster execution
+
+-: Run time polymorphism -- function overriding -- dynamic 
+: Resolved at runtime
+: Function runtime -- same function name, same parameters, but different class  
+: Uses a virtual keyword in the base class 
+: Achieving this through the concept of Inheritence 
+
+
+
+// Types of polymorphism -- 
+// (a) : Function overloading
+
+#include <iostream>
+using namespace std;
+
+class math {
+public:
+void add(int a, int b){
+cout << a+b << "\n";
+}
+
+public:
+void add(int a, int b, int c ) {
+cout << a+b+c << "\n";
+}
+
+public:
+void add(double a, double b ) {
+cout << a+b << "\n";
+}
+};
+
+int main() {
+math m;
+m.add(5,2);
+m.add(5,2,5);
+m.add(5.5 , 6.5);
+}
+
+
+
+// (b) : Function overriding
+
+Definition: Function Overriding is a feature in C++ where a derived class provides its own version of a function that is already present in the base class using the same function name and parameters. It is used to achieve runtime polymorphism.
+
+: It requires:
+: Same function name
+: Same parameters
+: Inheritance
+: Base function must be virtual
+
+
+--- EXAMPLE---
+
+#include <iostream>
+using namespace std;
+
+class animal{
+    public:
+    virtual void sound() {
+        cout << "Animal makes sound";
+    }
+};
+
+class dog : public animal {
+    public:
+    void sound() override {
+        cout << "Dog makes a sound" << "\n";
+    }
+};
+
+class cat : public animal {
+    public:
+    void sound() override {
+        cout << "Cat makes a sound";
+    }
+};
+
+int main(){
+    dog d;
+    cat c;
+    d.sound();
+    c.sound();
+}
+
+
+--- VIRTUAL KEYWORD---
+:The virtual keyword in C++ is used to allow a function in the base class to be overridden in the derived class.
+
+---EXAMPLE---
+
+#include <iostream>
+using namespace std;
+
+class parent{
+    public:
+    virtual void sum(int a, int b){
+        cout << a+b << " parent";
+    }
+};
+
+class child : public parent {
+    public:
+    void sum (int a, int b) override {
+        cout << a+b << " child";
+    }
+};
+
+int main(){
+    child c;
+    c.sum(10,20);
+}
+
+
