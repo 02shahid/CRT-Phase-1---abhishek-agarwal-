@@ -1,0 +1,239 @@
+//Linear Search 
+#include <iostream>
+#include <vector>
+
+int linearSearch(const std::vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); ++i) {
+        if (arr[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    std::vector<int> numbers = {10, 23, 45, 70, 11, 15};
+    int target = 70;
+    
+    int result = linearSearch(numbers, target);
+    
+    std::cout << result << "\n";
+    
+    return 0;
+}
+
+//Problemm 1--
+// Recursion -- Print 1 to 10 numbers
+#include <iostream>
+using namespace std;
+
+void printNumbers(int n) {
+    // Base Condition
+    if (n>10)
+    return ;
+    
+    // Logic 
+    cout<< n <<" ";
+    printNumbers(n+1);
+}
+int main() {
+    printNumbers(1);
+    return 0;
+}
+
+//Binary Search 
+#include <iostream>
+#include <vector>
+
+int binarySearch(const std::vector<int>& arr, int target) {
+    int left = 0;
+    int right = arr.size() - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return mid;
+        }
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    std::vector<int> numbers = {10, 11, 15, 23, 45, 70};
+    int target = 70;
+    
+    int result = binarySearch(numbers, target);
+    
+    std::cout << result << "\n";
+    
+    return 0;
+}
+
+//Bubble Sort
+#include <iostream>
+#include <vector>
+
+void bubbleSort(std::vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; ++i) {
+        for (int j = 0; j < n - i - 1; ++j) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    std::vector<int> numbers = {70, 45, 23, 15, 11, 10};
+    
+    bubbleSort(numbers);
+    
+    for (int i = 0; i < numbers.size(); ++i) {
+        std::cout << numbers[i] << " ";
+    }
+    std::cout << "\n";
+    
+    return 0;
+}
+
+//selection sort
+#include <iostream>
+#include <vector>
+
+void selectionSort(std::vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; ++i) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        if (minIndex != i) {
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+}
+
+int main() {
+    std::vector<int> numbers = {70, 45, 23, 15, 11, 10};
+    
+    selectionSort(numbers);
+    
+    for (int i = 0; i < numbers.size(); ++i) {
+        std::cout << numbers[i] << " ";
+    }
+    std::cout << "\n";
+    
+    return 0;
+}
+
+//Insertion sort
+#include <iostream>
+#include <vector>
+
+void insertionSort(std::vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+int main() {
+    std::vector<int> numbers = {70, 45, 23, 15, 11, 10};
+    
+    insertionSort(numbers);
+    
+    for (int i = 0; i < numbers.size(); ++i) {
+        std::cout << numbers[i] << " ";
+    }
+    std::cout << "\n";
+    
+    return 0;
+}
+
+
+//Problemm 2--
+// Recursion -- Print Factorial of a number
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    // Base Condition
+    if(n==0 || n==1){
+        return 1;
+    }
+    
+    // Logic 
+    
+    return n*factorial(n-1);
+    
+}
+int main() {
+    cout<<factorial(5);
+    return 0;
+}
+
+//Problemm 3--
+// Recursion -- Print Fibonacci series
+#include <iostream>
+using namespace std;
+
+int fibonacci(int n) {
+    // Base cases
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+
+    // Recursive relation
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n;
+    cout << "Enter number of terms: ";
+    cin >> n;
+
+    cout << "Fibonacci Series: ";
+    for (int i = 0; i < n; i++) {
+        cout << fibonacci(i) << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+// Climbing Stairs No.70
+
+class Solution {
+public:
+      int climbStairs(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        int prev = 1, curr = 1;
+        for (int i = 2; i <= n; i++) {
+            int temp = curr;
+            curr = prev + curr;
+            prev = temp;
+        }
+        return curr;
+    }
+};
